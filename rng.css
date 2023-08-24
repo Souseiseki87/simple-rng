@@ -1,0 +1,57 @@
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+body {
+    background-color: rgb(58, 58, 58);
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+form {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#input-amount-form {
+    padding: 10%;
+}
+
+input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 5px;
+    margin: 3px;
+    background-color: rgb(195, 193, 193);
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: gainsboro;
+}
+
+#result-paragraph {
+    font-size: 5em;
+    text-align: center;
+    margin: 20px;
+}
