@@ -1,8 +1,8 @@
-let inputAmount = 0;
+// let inputAmount = 0;
 
 // Gets the value the user entered 
 function getInputVal() {
-    inputAmount = document.querySelector('#input-amount').value;
+    const inputAmount = document.querySelector('#input-amount').value;
     return inputAmount;
 }
 
@@ -22,6 +22,9 @@ function generateForm() {
 function generateFetchButton() {
     const fetchInputsButton = document.createElement('button');
     fetchInputsButton.id = 'fetch-inputs-button';
+    fetchInputsButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        doRandomStuff()})
     fetchInputsButton.textContent = 'Random!';
     document.querySelector('#rng-inputs').appendChild(fetchInputsButton);
 }
@@ -29,9 +32,8 @@ function generateFetchButton() {
 
 // Generates the amount of text input fields the user specified
 function generateInput() {
-    getInputVal();
+    const x = getInputVal();
     generateForm();
-    const x = inputAmount;
     for (y = 0; x > y; y++) {
         const inputField = document.createElement('input');
         inputField.type = 'text';
@@ -42,7 +44,6 @@ function generateInput() {
     generateFetchButton();
 }
 
-let inputArray = [];
 
 // Create an array from the values of the user inputs
 function createArray() {
@@ -50,6 +51,7 @@ function createArray() {
     console.log(getInputs)
     const getInputsArray = (Array.from(getInputs))
     console.log(getInputsArray)
+    const inputArray = []
     for (let i = 0; i < getInputsArray.length; i++) {
         inputArray.push(getInputsArray[i].value);
         console.log(inputArray);
@@ -84,16 +86,13 @@ document.querySelector('#input-amount-button').addEventListener('click', (event)
         removeDiv.remove();
     }
     generateInput();
-    console.log(inputAmount);
+    // console.log(inputAmount);
 })
 
 // Prevents page reload after button press and generates the random result.
-document.body.addEventListener('click', (event) => {
-    if (event.target.matches('#fetch-inputs-button')) {
-        event.preventDefault()
-    if (inputArray != []) {
-        inputArray = []
-    }
-    doRandomStuff()
-    }
-})
+// document.body.addEventListener('click', (event) => {
+//     if (event.target.matches('#fetch-inputs-button')) {
+//         event.preventDefault()
+
+//     }
+// })
